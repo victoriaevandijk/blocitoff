@@ -1,8 +1,15 @@
 <div class="jumbotron">
 <h1>Welcome to BlocItOff</h1>
 <p>A self-destructing to-do list application built to declutter and streamline your daily tasks.</p>
+   <% unless current_user %>
    <p>
      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or
      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
    </p>
+   <% end %>
+</div>
+<div class = "instructions">
+  <span class='glyphicon glyphicon-list pull-left' aris-hidden='true'></span><p><strong>Sign up and add items to your list.</strong></p>
+  <span class='glyphicon glyphicon-time pull-left' aris-hidden='true'></span><p><strong>You have 7 days to complete an item, so get moving.</strong></p>
+  <span class='glyphicon glyphicon-calendar pull-left' aris-hidden='true'></span><p><strong>Keep your to-do list streamlined and focused on what really needs done.</strong></p>
 </div>

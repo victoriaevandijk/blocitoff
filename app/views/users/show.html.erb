@@ -4,3 +4,11 @@
     <ul>
       <li>You have 7 days to get an item done before it gets deemed unimportant and gets deleted automatically.</li>
     </ul>
+    
+<div id="items" class='items list-group col-md-8 pull-left'>
+    <%= render @items %>
+  </div>
+</div>
+<div class='col-md-6'>
+  <%= render partial: 'items/form', locals: {user: @user} %>
+</div>

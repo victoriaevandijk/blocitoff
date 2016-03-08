@@ -1,3 +1,3 @@
 <%= link_to '', [@user, item], method: :delete, class: 'glyphicon glyphicon-ok' %>
 <strong><%= item.name %></strong>
-Approximately <%= distance_of_time_in_words(item.created_at, item.created_at - 7.days) %> until deletion<br/>
+Approximately <%= distance_of_time_in_words(item.created_at + 7.days, Time.now) %> until deletion<br/>

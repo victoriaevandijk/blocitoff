@@ -8,11 +8,17 @@ require 'faker'
 end
 users = User.all
 
+User.create!(
+  email: 'victoriaevandijk@gmail.com',
+  password: 'helloworld'
+)
+
 100.times do
-    Item.create!(
+    item = Item.create!(
        user: users.sample,
        name: Faker::Lorem.sentence
     )
+  item.update_attribute(:created_at, rand(10.minutes .. 8.days).ago)
 end
 items = Item.all
 

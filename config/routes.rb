@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'welcome/about'
   
+  get 'devise/registrations/edit'
+  
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

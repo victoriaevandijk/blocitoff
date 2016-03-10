@@ -1,13 +1,27 @@
-<h1>Hello, <%= @user.name || @user.email %>!</h1>
+<div class="container">
+  <div class="row">
+    <div class='col-sm-12'>
+      <h1>Hello, <%= @user.name || @user.email %>!</h1>
 
-<h4>Welcome back to BlocItOff. Get to work completing the tasks on your list! Remember: You have 7 days to get an item done before it gets deemed unimportant and gets deleted automatically.</h4>
+      <h4>Welcome back to BlocItOff. Get to work completing the tasks on your list! Remember: You have 7 days to get an item done before it gets deemed unimportant and gets deleted automatically.</h4>
 
-<h1 class='list-title'><%= "Here is your current to-do list:"%></h1>
-
-  <div id="items" class='items list-group col-md-8 pull-left'>
-    <%= render @items %>
+      <h1 class='list-title'><%= "Here is your current to-do list:"%></h1>
+    </div>
   </div>
-</div>
-<div class='col-md-6'>
-  <%= render partial: 'items/form', locals: {user: @user} %>
+  <div class="row">
+    <div class='col-sm-12'>
+      <div id="items" class='items list-group col-md-8 pull-left'>
+        <ul>
+        <%= render @items %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class='col-md-6'>
+      <%= render partial: 'items/form', locals: {user: @user} %>
+    </div>
+  </div>
 </div>

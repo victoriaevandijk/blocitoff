@@ -1,9 +1,8 @@
-<h1 class='list-title'><%= "#{@user.email}'s to-do list."%></h1>
+<h1>Hello, <%= @user.name || @user.email %>!</h1>
 
-<h3>Rules of Blocitoff</h3>
-    <ul>
-      <li>You have 7 days to get an item done before it gets deemed unimportant and gets deleted automatically.</li>
-    </ul>
+<h4>Welcome back to BlocItOff. Get to work completing the tasks on your list! Remember: You have 7 days to get an item done before it gets deemed unimportant and gets deleted automatically.</h4>
+
+<h1 class='list-title'><%= "Here is your current to-do list:"%></h1>
 
   <div id="items" class='items list-group col-md-8 pull-left'>
     <%= render @items %>

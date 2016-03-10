@@ -30,7 +30,6 @@
 .jumbotron {
   background:  #ffccff;
   text-align:  center;
-  margin: -50px 0px 0px 0px;
 }
 
 .jumbotron h1 {
@@ -42,3 +41,14 @@ li {
   font-size: 1.1em;
   font-weight: bold;
 }
+
+.current-user-name {
+   float: left;
+   text-align: right;
+   margin-right: 10px;
+ }
+ 
+.current-user-image {
+   float: right;
+   margin: 0 5px 10px 0;
+ }

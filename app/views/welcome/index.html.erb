@@ -8,6 +8,9 @@
     <% else %>
         <p><%=  pluralize current_user.lists.count, "Lists" %>, with <%=  pluralize current_user.total_items, "Items" %> To-Do</p>
            <% end %>
+    <section class="stats">
+        <%= render 'shared/stats' %>
+    </section>
       <% else %>
    <p>
      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or

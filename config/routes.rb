@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show] do
     resources :lists, only: [:create] 
+    member do
+      get :following, :followers
+    end
   end
   
   resources :lists, only: [:show, :destroy] do
@@ -9,6 +12,8 @@ Rails.application.routes.draw do
   end
   
   resources :items, only: [:destroy]
+  
+  resources :relationships, only: [:create, :destroy]
   
   get 'welcome/index'
 

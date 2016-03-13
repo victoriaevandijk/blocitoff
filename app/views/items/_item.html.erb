@@ -1,5 +1,14 @@
-<% if current_user == @user %>
-<%= link_to "", [current_user, item], method: :delete, class: 'glyphicon glyphicon-ok' %>
+
+<% if @list.items.count == 0 %>
+  <p>This list is complete!</p>
+<% else %>
+  <div class="row">
+    <div class='col-sm-12'>
+  <ul>
+        <%= link_to "", [item], method: :delete, class: 'glyphicon glyphicon-ok' %>
+        <strong><%= item.name %></strong>
+        Approximately <%= distance_of_time_in_words(item.created_at + 7.days, Time.now) %> until deletion<br/>
+  </ul>
+    </div>
+  </div>
 <% end %>
-<strong><%= item.name %></strong>
-Approximately <%= distance_of_time_in_words(item.created_at + 7.days, Time.now) %> until deletion<br/>

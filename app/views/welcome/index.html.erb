@@ -1,7 +1,14 @@
 <div class="jumbotron">
 <h1>Welcome to BlocItOff</h1>
 <p>A self-destructing to-do list application built to declutter and streamline your daily tasks.</p>
-   <% unless current_user %>
+   <% if user_signed_in? %>
+        <h3><%= link_to current_user.name, "/users/#{current_user.id}" %>, here's what you have to do:</h3>
+        <% if current_user.lists.count == 0 %>
+          <h4>All List Complete! <span style="color: #09f;" class="glyphicon glyphicon-ok"></span></h4>
+    <% else %>
+        <p><%=  pluralize current_user.lists.count, "Lists" %>, with <%=  pluralize current_user.total_items, "Items" %> To-Do</p>
+           <% end %>
+      <% else %>
    <p>
      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or
      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
@@ -9,7 +16,7 @@
    <% end %>
 </div>
 <div class = "instructions">
-  <span class='glyphicon glyphicon-list pull-left' aris-hidden='true'></span><p><strong>Sign up and add items to your list.</strong></p>
-  <span class='glyphicon glyphicon-time pull-left' aris-hidden='true'></span><p><strong>You have 7 days to complete an item, so get moving.</strong></p>
-  <span class='glyphicon glyphicon-calendar pull-left' aris-hidden='true'></span><p><strong>Keep your to-do list streamlined and focused on what really needs done.</strong></p>
+  <p><span class='glyphicon glyphicon-list' aris-hidden='true'></span><strong> Sign up and add items to your list. </strong><span class='glyphicon glyphicon-list' aris-hidden='true'></span></p>
+  <p><span class='glyphicon glyphicon-time' aris-hidden='true'></span><strong> You have 7 days to complete an item, so get moving. </strong><span class='glyphicon glyphicon-time' aris-hidden='true'></p>
+  <p><span class='glyphicon glyphicon-calendar' aris-hidden='true'></span><strong> Keep your to-do list streamlined and focused on what really needs done. </strong><span class='glyphicon glyphicon-calendar' aris-hidden='true'></p>
 </div>

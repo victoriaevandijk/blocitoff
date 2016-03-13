@@ -15,10 +15,15 @@ User.create!(
   password: 'helloworld'
 )
 
+24.times do
+  List.create(title: Faker::Company.buzzword, user: users.sample)
+end
+lists = List.all
+
 150.times do
     item = Item.create!(
-       user: users.sample,
-       name: Faker::Lorem.sentence
+       name: Faker::Lorem.sentence,
+       list: lists.sample
     )
   item.update_attribute(:created_at, rand(10.minutes .. 8.days).ago)
 end
@@ -26,4 +31,5 @@ items = Item.all
 
 puts "Seeds finished"
 puts "#{User.count} users created"
+puts "#{List.count} lists created"
 puts "#{Item.count} items created"

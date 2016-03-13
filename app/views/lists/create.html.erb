@@ -1,0 +1,6 @@
+<% if @list.valid? %>
+   $('.js-list').prepend("<%= escape_javascript(render(@list)) %>");
+   $('.new-list').html("<%= escape_javascript(render partial: 'lists/form', locals: { user: @user, list: @list }) %>");
+ <% else %>
+   $('.new-list').prepend("<div class='alert alert-danger'> <%= flash[:error] = "Error Creating List. Please Try Again" %> </div");
+ <% end %>

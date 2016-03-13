@@ -15,16 +15,25 @@
 @import "bootstrap";
 
 .user-info {
-  margin-top: 9px;
+  margin-top: 10px;
 }
 
 .nav {
   margin-top: 5px;
 }
 
+.middle {
+    margin-top: 10px;
+}
+
+.title {
+    margin-right: 15px;
+    margin-top: -5px;
+}
+
 .welcome {
     background-image: url("https://s-media-cache-ak0.pinimg.com/736x/07/93/d2/0793d24f8203cadf1fc9ef2a4f4851f3.jpg");
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'BenchNine', sans-serif;
 }
 
 .jumbotron {
@@ -52,3 +61,4 @@ li {
    float: right;
    margin: 0 5px 10px 0;
  }
+ 

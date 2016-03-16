@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   
   resources :lists, only: [:show, :destroy] do
-    resources :items, only: [:create]
+    resources :items
   end
   
   resources :items, only: [:destroy]

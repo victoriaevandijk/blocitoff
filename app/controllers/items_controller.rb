@@ -1,6 +1,11 @@
 class ItemsController < ApplicationController
   respond_to :html, :js
 
+  def new
+    @list = List.find(params[:list_id])
+    @item = @list.item.new
+  end
+
   def create
     @list = List.find(params[:list_id])
     @item = @list.items.build(item_params)

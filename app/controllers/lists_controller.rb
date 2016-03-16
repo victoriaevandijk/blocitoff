@@ -10,20 +10,14 @@ class ListsController < ApplicationController
     @list.save
     @user = @list.user
 
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    redirect_to @user
   end
 
   def destroy
     @list = List.find(params[:id])
     @list.destroy
     
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    redirect_to root_path
   end
   
   def show
@@ -34,7 +28,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:title)
+    params.require(:list).permit(:user, :title)
   end
 
 end

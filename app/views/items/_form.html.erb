@@ -1,12 +1,10 @@
-<<<<<<< HEAD
-<%= form_for [list, list.items.new] do |f| %>
-=======
 <%= form_for [@list, item.new] do |f| %>
->>>>>>> calendar
 <h4>Add a To-Do item</h4>
   <div class='form-group'>
     <%= f.text_field :name, class: 'form-control', placeholder: 'Add a new item.' %>
   </div>
+  <p>Expiration Date for Task:</p>
+  <p>Date: <input type="text" id="datepicker"></p>
   <div class='form-group'>
     <%= f.submit 'Save', class: 'btn btn-success blue', remote: true %>
   </div>

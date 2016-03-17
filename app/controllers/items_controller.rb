@@ -11,11 +11,8 @@ class ItemsController < ApplicationController
     @item = @list.items.build(item_params)
     @item.save!
     
-<<<<<<< HEAD
-    redirect_to @list
-=======
+
     redirect_to :back
->>>>>>> calendar
   end
   
   def destroy

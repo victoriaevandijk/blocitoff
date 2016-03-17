@@ -3,11 +3,7 @@
  <%= link_to "Delete List", @list, method: :delete, class: 'btn btn-danger' %>
 <% end %>
 <%= render @list.items %>
-<<<<<<< HEAD
 <% if current_user == @list.user %>
-<%= render partial: 'items/form', locals: {list: @list} %>
-<% end %>
-=======
-
 <%= render partial: 'items/form', locals: { item: @list.items }  %>
->>>>>>> calendar
+<% end %>
+

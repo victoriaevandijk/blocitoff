@@ -1,4 +1,8 @@
 <h3><%= @list.title %></h3>
+<% if current_user == @list.user %>
  <%= link_to "Delete List", @list, method: :delete, class: 'btn btn-danger' %>
+<% end %>
 <%= render @list.items %>
-<%= render 'items/form' %>
+<% if current_user == @list.user %>
+<%= render partial: 'items/form', locals: {list: @list} %>
+<% end %>

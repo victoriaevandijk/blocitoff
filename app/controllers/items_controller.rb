@@ -9,13 +9,9 @@ class ItemsController < ApplicationController
   def create
     @list = List.find(params[:list_id])
     @item = @list.items.build(item_params)
+    @item.save!
     
-    respond_to do |format|
-       format.html
-       format.js
-    end
-    
-    redirect_to :back
+    redirect_to @list
   end
   
   def destroy

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'calendar/show'
+
   devise_for :users
   resources :users, only: [:show] do
     resources :lists, only: [:create] 
@@ -14,6 +16,8 @@ Rails.application.routes.draw do
   resources :items, only: [:destroy]
   
   resources :relationships, only: [:create, :destroy]
+  
+  resource :calendar, only: [:show], controller: :calendar
   
   get 'welcome/index'
 

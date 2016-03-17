@@ -1,4 +1,5 @@
 <h3><%= @list.title %></h3>
  <%= link_to "Delete List", @list, method: :delete, class: 'btn btn-danger' %>
 <%= render @list.items %>
-<%= render 'items/form' %>
+
+<%= render partial: 'items/form', locals: { item: @list.items }  %>

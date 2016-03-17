@@ -9,11 +9,7 @@ class ItemsController < ApplicationController
   def create
     @list = List.find(params[:list_id])
     @item = @list.items.build(item_params)
-    
-    respond_to do |format|
-       format.html
-       format.js
-    end
+    @item.save!
     
     redirect_to :back
   end
